@@ -15,7 +15,7 @@ const Home = () => {
     // Fetch data for the pie chart and room data from API
     useEffect(() => {
         // Fetch room stats for pie chart
-        axios.get('/form/room-stats') // Replace this with the correct API endpoint for room stats
+        axios.get('localhost:3000/form/room-stats') // Replace this with the correct API endpoint for room stats
             .then(response => {
                 const { numOfRoomsDone, numOfRoomsNotDone } = response.data; // Destructure API response
                 const total = numOfRoomsDone + numOfRoomsNotDone;
@@ -44,7 +44,7 @@ const Home = () => {
             });
 
         // Fetch room data for completed and non-completed rooms
-        axios.get('/form/rooms') // Replace this with the correct API endpoint for rooms
+        axios.get('localhost:3000/form/rooms') // Replace this with the correct API endpoint for rooms
             .then(response => {
                 const rooms = response.data; // Assuming the response returns an array of rooms
 
